@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Aine AI</title>
+
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            background-color: #f1f1f1;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 100px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            overflow-x: hidden;
+            padding-top: 20px;
+            box-shadow: 10px 10px 10px rgb(173, 173, 173);
+        }
+
+        .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 9px;
+            color: #818181;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            color: #111;
+        }
+
+        .main {
+            margin-left: 130px;
+            font-size: 28px;
+            padding: 0px 10px;
+            margin-top: 100px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto;
+            row-gap: 0px;
+        }
+
+        .grid-item {
+            text-align: center;
+        }
+
+        .btn {
+            border: none;
+            outline: none;
+            margin: 0;
+        }
+
+        .active,
+        .btn:hover {
+            margin: 0;
+            background-color: rgba(189, 216, 224, 0.863);
+            color: black;
+            border-left: 4px solid rgb(0, 81, 255);
+            border-radius: 0px;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .vid {
+            display: flex;
+            flex-direction: row;
+        }
+
+        input[type=url] {
+            display: flex;
+            margin-top: 50px;
+            margin-left: 100px;
+            padding: 10px 20px;
+            font-size: 16px;
+            width: 80%;
+            border: none;
+            border-radius: 2px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ::-webkit-input-placeholder {
+            color: rgba(0, 0, 0, 0.76);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidenav">
+        <i class="fa fa-file logo" style="font-size: 33px;"></i>
+        <div class="grid-container" id="btn-div">
+            <button class="grid-item btn active">
+                <img src="./Contacts_svg.svg" alt="contacts-icon" height="35px" width="35px"
+                    style="margin-top: 0px; margin-bottom: 0px; padding-bottom: 0px; padding-top: 0px;">
+                <a href="#students">Students</a></button>
+
+            <button class="grid-item btn">
+                <i class="fa fa-book" style="font-size: 33px;"></i>
+                <a href="#students">Lesson Plan</a></button>
+
+            <button class="grid-item btn">
+                <i class="fa fa-cog" style="font-size: 33px;"></i>
+                <a href="#students">Setting</a></button>
+
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="vid">
+            <i class="fa fa-play" style="color: #818181;"></i>
+            <p style="margin-left: 10px; font-size: 20px; color: #818181;">Videos</p>
+        </div>
+        <input type="url" placeholder="Insert URL here">
+        <div style="display: flex; justify-content: center; margin-top: 20px;">
+            <p style="font-size: 16px;">or</p>
+        </div>
+        <div style="margin-left: 150px; margin-top: 50px;">
+            <p style="font-size: 16px;">upload</p>
+        </div>
+    </div>
+
+    <script>
+        var header = document.getElementById("btn-div");
+        var btns = header.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
+</body>
+
+</html>
